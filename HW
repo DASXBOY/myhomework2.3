@@ -51,7 +51,7 @@ Display the two results in the same row.
 SELECT 
   SUM(CASE WHEN gender = 'M' THEN 1 ELSE 0 END) AS male_count,
   SUM(CASE WHEN gender = 'F' THEN 1 ELSE 0 END) AS female_count
-FROM patients;
+FROM patients
 
 
 7-TASK
@@ -124,7 +124,7 @@ EX: SMITH,jane
 
 SELECT UPPER(last_name) || ',' || LOWER(first_name) AS full_name
 FROM patients
-ORDER BY first_name DESC;
+ORDER BY first_name DESC
 
 
 14-TASK
@@ -154,7 +154,7 @@ SELECT DAY(admission_date) AS day_of_month,
 COUNT(*) AS total_admissions 
 FROM admissions  
 GROUP BY day_of_month 
-ORDER BY total_admissions DESC;
+ORDER BY total_admissions DESC
 
 
 17-TASK
@@ -166,7 +166,7 @@ FROM admissions
 WHERE patient_id = 542 AND admission_date = (
   SELECT MAX(admission_date) 
   FROM admissions 
-  WHERE patient_id = 542);
+  WHERE patient_id = 542)
 
 
 18-TASK
